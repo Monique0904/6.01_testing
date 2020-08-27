@@ -1,0 +1,46 @@
+#program start
+
+#input section
+	#set G equal to 0.00
+	#set L equal to 0.00
+	#set Ga equal to 0.00
+	#set L equal to the absolute value and the float numeric value of the users input 
+	#set G equal to the function convertToGallon inputing L for the Liter value  
+	#set Ga equal to the function convertToPound inputing G for the gallon value 
+
+#processing section
+	#define function convertToGallon with Liter as its parameter 
+	#Gallon = Liter/3.785411784
+   	#return value for variable Gallon
+	#define function convertToPound with gallon as its parameter
+	#pound = gallon * 8.34
+	#return value for variable pound
+
+#output section
+	#display str(L) + " liter(s) is equal to " + str(G) + " gallon(s)"
+	#display "and" + str(G) + " gallon(s) is equal to " + str(Ga) + " pound(s)"
+
+#eop
+
+def convertToGallon(Liter):
+
+	Gallon = Liter/3.785411784
+	return Gallon
+	
+def convertToPound(gallon):
+
+	pound = gallon * 8.34
+	return pound
+
+def main():
+	G = 0.00
+	L = 0.00
+	Ga = 0.00
+
+	L = abs(float(input("Enter a measurement in liters: ")))
+	G = convertToGallon(L)
+	Ga = convertToPound(G)
+	print(str(L) + " liter(s) is equal to " + str(G) + " gallon(s)")
+	print("and " + str(G) + " gallon(s) is equal to " + str(Ga) + " pound(s)")
+	
+main()
